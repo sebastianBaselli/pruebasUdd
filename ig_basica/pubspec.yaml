@@ -1,0 +1,36 @@
+name: ig_basica
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flex_color_scheme: ^7.3.1
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+   - assets/1.jpg
+   - assets/2.jpg
+   - assets/3.jpg
+   - assets/4.jpg
+   - assets/5.jpg
+   - assets/6.jpg
+   - assets/7.jpg
+   - assets/8.jpg
+   - assets/9.jpg
+   - assets/10.jpg
+   - assets/11.jpg
+   - assets/12.jpg
+   - assets/pa.jpg
+

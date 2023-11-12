@@ -86,6 +86,7 @@ class _HomeAppState extends State<HomeApp> with SingleTickerProviderStateMixin {
                               hintText: '¿Qué te apetece hoy?',
                               border: InputBorder.none,
                             ),
+                            
                           ),
                 ),
                 Center(
