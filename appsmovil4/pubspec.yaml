@@ -33,6 +33,7 @@ flutter:
    - assets/11.jpg
    - assets/12.jpg
    - assets/pa.jpg
+   - assets/mitades.png
   
   fonts:
    - family: Montserrat

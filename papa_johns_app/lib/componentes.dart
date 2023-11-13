@@ -1,80 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-class Card1 extends StatelessWidget {
-  const Card1({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 1,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            height: 152,
-            decoration: const BoxDecoration(
-            color: const Color.fromARGB(255,195,195,195),
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(5.0),
-                topRight: Radius.circular(5.0),
-              ),
-            ),
-          ),
-          Container(
-            height: 48,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(5.0),
-                bottomRight: Radius.circular(5.0),
-              ),
-            ),
-            child: const Padding(
-              padding: EdgeInsets.only(left: 8.0, top: 8.0),
-              child: Text('Descripción'),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Card2 extends StatelessWidget {
-  const Card2({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 1,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            height: 152,
-            decoration: const BoxDecoration(
-            color: const Color.fromARGB(255,195,195,195),
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(5.0),
-                topRight: Radius.circular(5.0),
-                bottomLeft: Radius.circular(5.0),
-                bottomRight: Radius.circular(5.0),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class ChipNavigationBar extends StatefulWidget {
   const ChipNavigationBar({super.key});
 
@@ -116,6 +41,8 @@ class _ChipNavigationBarState extends State<ChipNavigationBar> {
                   },
                   labelStyle: TextStyle(
                     color: _selectedIndex == index ? Colors.white : Colors.black,
+                    fontSize: 20,
+                    fontFamily: 'FrancoisOne'
                   ),
                   selectedColor: Color(0xff2d5d2b),
                   backgroundColor: Colors.grey.shade300,
@@ -133,3 +60,268 @@ class _ChipNavigationBarState extends State<ChipNavigationBar> {
   }
 }
 
+class Card1 extends StatelessWidget {
+  const Card1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            height: 200.0,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/1.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+
+                ),
+          ),
+          Container(
+            height: 48,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(5.0),
+                bottomRight: Radius.circular(5.0),
+              ),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 8.0, top: 8.0),
+              child: Text('Descripción'),
+              
+            ),
+            
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Card2 extends StatelessWidget {
+  const Card2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            height: 200.0,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/2.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+
+                ),
+          ),
+          Container(
+            height: 48,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(5.0),
+                bottomRight: Radius.circular(5.0),
+              ),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 8.0, top: 8.0),
+              child: Text('Descripción'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Card3 extends StatelessWidget {
+  const Card3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            height: 200.0,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/3.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+
+                ),
+          ),
+          Container(
+            height: 48,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(5.0),
+                bottomRight: Radius.circular(5.0),
+              ),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 8.0, top: 8.0),
+              child: Text('Descripción'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Card4 extends StatelessWidget {
+  const Card4({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            height: 200.0,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/4.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+
+                ),
+          ),
+          Container(
+            height: 48,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(5.0),
+                bottomRight: Radius.circular(5.0),
+              ),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 8.0, top: 8.0),
+              child: Text('Descripción'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Card5 extends StatelessWidget {
+  const Card5({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            height: 200.0,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/5.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+
+                ),
+          ),
+          Container(
+            height: 48,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(5.0),
+                bottomRight: Radius.circular(5.0),
+              ),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 8.0, top: 8.0),
+              child: Text('Descripción'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Card6 extends StatelessWidget {
+  const Card6({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            height: 200.0,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/6.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+
+                ),
+          ),
+          Container(
+            height: 48,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(5.0),
+                bottomRight: Radius.circular(5.0),
+              ),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 8.0, top: 8.0),
+              child: Text('Descripción'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

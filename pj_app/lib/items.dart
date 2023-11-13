@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pj_app/theme.dart';
 
+
+
   //AHORA LA PANTALLA DE DETALLES ES INDEPENDIENTE
 //SE CREA UNA CLASE DETAILSCREENDATA, CON DOS ATRIBUTOS O PARÁMETROS
 class DetailScreenData {
@@ -43,10 +45,8 @@ Widget buildDetailScreen(BuildContext context, DetailScreenData data) {
 
 Widget createCustomCard(
   BuildContext context,
-  String groupName,
   String imagePath,
   String title,
-  String description,
 ) {
   void showBottomSheet(BuildContext context) {
     showModalBottomSheet<void>(
@@ -161,6 +161,7 @@ Widget createCustomCard(
 }
 
 Widget novedadesItem() {
+  
   return ListTile(
     leading: CircleAvatar(
       backgroundColor: MyTheme.lightTheme().colorScheme.onPrimaryContainer,
@@ -265,3 +266,45 @@ class _ChipNavigationBarState extends State<ChipNavigationBar> {
   }
 }
 
+class Card1 extends StatelessWidget {
+  const Card1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 1,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            height: 152,
+            decoration: const BoxDecoration(
+            color: const Color.fromARGB(255,195,195,195),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(5.0),
+                topRight: Radius.circular(5.0),
+              ),
+            ),
+          ),
+          Container(
+            height: 48,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(5.0),
+                bottomRight: Radius.circular(5.0),
+              ),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 8.0, top: 8.0),
+              child: Text('Descripción'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

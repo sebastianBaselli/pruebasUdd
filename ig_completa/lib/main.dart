@@ -87,12 +87,12 @@ class MainScreen extends StatelessWidget {
                       );
                     },
                     child: Container(
-                      width: 128,
+                      width: 228,
                       height: 96,
                       margin: const EdgeInsets.only(right: 12),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),
-                        child: Image.asset('assets/$imageName'),
+                        child: Image.asset('assets/mitades.png'),
                       ),
                     ),
                   );

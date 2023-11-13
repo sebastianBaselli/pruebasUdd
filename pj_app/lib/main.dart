@@ -28,11 +28,12 @@ class HomeApp extends StatefulWidget {
   _HomeAppState createState() => _HomeAppState();
 }
 
+
 class _HomeAppState extends State<HomeApp> {
   late PageController _pageController;
   int _currentPage = 0;
-  final List<String> _screenTitles = ["Inicio", "Búsqueda", "Add", "Videos", "Perfil"];
-  final List<IconData> _screenIcons = [Icons.home, Icons.search, Icons.add, Icons.video_library, Icons.person];
+  final List<String> _screenTitles = ["Menú", "Papa Puntos", "Pedidos", "Perfil"];
+  final List<IconData> _screenIcons = [Icons.restaurant_menu, Icons.star, Icons.receipt_long, Icons.person_rounded];
 
   @override
   void initState() {
@@ -98,23 +99,28 @@ class _HomeAppState extends State<HomeApp> {
                 expandedHeight: 80.0,
               ),
               
+const Padding(
+  padding: EdgeInsets.fromLTRB(10, 8, 10, 0),
+  child: Card1(), // Simplemente utiliza SimpleCard en lugar de anidar otro Container
+),
+
+const Padding(
+  padding: EdgeInsets.fromLTRB(10, 8, 10, 0),
+  child: Card1(), // Simplemente utiliza SimpleCard en lugar de anidar otro Container
+),
               
               SliverList(//SE MODIFICÓ ESTA LISTA PARA QUE LE PUEDA PASAR ATRIBUTOS A LA CARD DEFINIDA EN ITEMS.DART
                 delegate: SliverChildListDelegate(
                   [
                     createCustomCard(
                       context,
-                      'Grupo 1',
-                      'assets/1.jpg',
+                      'assets/mitades.png',
                       'Título 1',
-                      'Descripción 1',
                     ),
                     createCustomCard(
                       context,
-                      'Grupo 2',
                       'assets/2.jpg',
                       'Título 2',
-                      'Descripción 2',
                     ),
                     // PUEDES AGREGAR MÁS TARJETA
                   ],
@@ -131,29 +137,6 @@ class _HomeAppState extends State<HomeApp> {
                     fontSize: 20,
                   ),
                 ),
-                actions: [
-                  IconButton(
-                    color: const Color.fromARGB(255, 0, 0, 0),
-                    icon: const Icon(Icons.favorite_border_outlined),
-                    onPressed: () {
-                      if (kDebugMode) {
-                        print('Icono de búsqueda presionado!');
-                      }
-                    },
-                  ),
-                  IconButton(
-                    color: const Color.fromARGB(255, 0, 0, 0),
-                    icon: const Icon(Icons.offline_bolt_outlined),
-                    onPressed: () {
-                      if (kDebugMode) {
-                        print('Icono de más opciones presionado!');
-                      }
-                    },
-                  ),
-                ],
-                floating: false,
-                pinned: false,
-                expandedHeight: 80.0,
               ),
               SliverList(
                 delegate: SliverChildListDelegate(

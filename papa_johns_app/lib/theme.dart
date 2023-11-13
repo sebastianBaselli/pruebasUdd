@@ -11,7 +11,7 @@ class MyTheme {
     secondaryContainer: Color(0xff85efc3),
     tertiary: Color(0xffb13da4),
     tertiaryContainer: Color(0xff95f0ff),
-    appBarColor: Color(0xff85efc3),
+    appBarColor: Color(0xff2d5d2b),
     error: Color(0xffb00020),
   ),
       subThemesData: const FlexSubThemesData(

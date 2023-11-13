@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'componentes.dart'; // Importa el archivo componentes.dart que contiene CustomCard
 import 'package:papa_johns_app/theme.dart';
+import 'splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: MyTheme.lightTheme(),
+      home: const SplashScreen(),
     );
   }
 }
@@ -45,8 +47,9 @@ class MyApp extends StatelessWidget {
                     'Recoger en Local: Escuela Militar',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'FrancoisOne'
                     ),
                   ),
                 ],
@@ -59,7 +62,7 @@ class MyApp extends StatelessWidget {
             children: [
               const ChipNavigationBar(),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 0), // Margen izquierdo y derecho para el TextField
+                  padding: const EdgeInsets.fromLTRB(16, 10, 16, 0), // Margen izquierdo y derecho para el TextField
                   child: Container(
                     decoration: BoxDecoration(
 
@@ -78,10 +81,6 @@ class MyApp extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(0, 0, 12, 0), // Margen derecho para el ícono de filtro
-                          child: Icon(Icons.tune, color: Colors.black),
-                        ),
                       ],
                     ),
                   ),
@@ -96,6 +95,50 @@ class MyApp extends StatelessWidget {
 
  //ACÁ LO DEMÁS
 
+const SizedBox(height:1),
+            SizedBox(
+              height: 200,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 6,
+                itemBuilder: (context, index) {
+                  String imageName = '${index + 1}.png';
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => ImageScreen(imageName: imageName),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 470,
+                      height: 200,
+                      margin: const EdgeInsets.only(left: 7, right: 7),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset('assets/$imageName'),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+
+            const Text(
+              'PROMOCIONES',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'FrancoisOne'
+              ),
+            ),
+
+const Padding(
+  padding: EdgeInsets.fromLTRB(10, 8, 10, 0),
+  child: Card1(), // Simplemente utiliza SimpleCard en lugar de anidar otro Container
+),
+
 const Padding(
   padding: EdgeInsets.fromLTRB(10, 8, 10, 0),
   child: Card2(), // Simplemente utiliza SimpleCard en lugar de anidar otro Container
@@ -103,12 +146,22 @@ const Padding(
 
 const Padding(
   padding: EdgeInsets.fromLTRB(10, 8, 10, 0),
-  child: Card1(), // Simplemente utiliza SimpleCard en lugar de anidar otro Container
+  child: Card3(), // Simplemente utiliza SimpleCard en lugar de anidar otro Container
 ),
 
 const Padding(
   padding: EdgeInsets.fromLTRB(10, 8, 10, 0),
-  child: Card1(), // Simplemente utiliza SimpleCard en lugar de anidar otro Container
+  child: Card4(), // Simplemente utiliza SimpleCard en lugar de anidar otro Container
+),
+
+const Padding(
+  padding: EdgeInsets.fromLTRB(10, 8, 10, 0),
+  child: Card5(), // Simplemente utiliza SimpleCard en lugar de anidar otro Container
+),
+
+const Padding(
+  padding: EdgeInsets.fromLTRB(10, 8, 10, 0),
+  child: Card6(), // Simplemente utiliza SimpleCard en lugar de anidar otro Container
 ),
         
                 ],
@@ -123,25 +176,21 @@ const Padding(
 
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined, color: Colors.black), // Icono blanco
-              label: 'Home',
+              icon: Icon(Icons.restaurant_menu, color: Colors.black), // Icono blanco
+              label: 'Menú',
             ),
 
              BottomNavigationBarItem(
-              icon: Icon(Icons.storefront_outlined, color: Colors.black), // Icono blanco
-              label: 'Grocery',
+              icon: Icon(Icons.star, color: Colors.black), // Icono blanco
+              label: 'Papa Puntos',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.manage_search, color: Colors.black), // Icono blanco
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined, color: Colors.black), // Icono blanco
-              label: 'Chart',
+              icon: Icon(Icons.receipt_long, color: Colors.black), // Icono blanco
+              label: 'Pedidos',
             ),
                BottomNavigationBarItem(
               icon: Icon(Icons.account_circle, color: Colors.black), // Icono blanco
-              label: 'Account',
+              label: 'Perfil',
             ),
           ],
           selectedItemColor: Colors.black, // Color del texto seleccionado en blanco
@@ -154,3 +203,45 @@ const Padding(
   }//Se cierra el Widget Build contexts
 }// se cierra la clase
 
+class ImageScreen extends StatelessWidget {
+  final String imageName;
+  final List<String> artistNames = [
+    'Kaleko Urdangak',
+    'Brigade Loco',
+    'No somos nada',
+    'La Polla Records',
+    'Kortatu',
+    'Kaleko Urdangak',
+    'Brigade Loco',
+    'No somos nada',
+    'La Polla Records',
+    'Kortatu',
+  ];
+
+  ImageScreen({super.key, required this.imageName});
+
+  @override
+  Widget build(BuildContext context) {
+    int imageIndex = int.parse(imageName.split('.').first) - 1;
+    String artistName = artistNames[imageIndex];
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: Text(
+          artistName,
+          style: const TextStyle(color: Colors.black),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Image.asset('assets/$imageName'),
+            Text('Nombre del artista: $artistName'),
+          ],
+        ),
+      ),
+    );
+  }
+}
